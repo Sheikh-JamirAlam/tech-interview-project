@@ -31,7 +31,7 @@ export function FeatureWithImage({
               <SanityButtons
                 buttonClassName="w-full sm:w-auto px-6.5 py-1.5 rounded-none text-[#737373] dark:border-[#737373] dark:bg-transparent dark:hover:bg-input/30 text-base"
                 buttons={buttons}
-                className="mb-8 grid w-full gap-2 sm:w-fit sm:grid-flow-col lg:justify-start"
+                className="mb-8 grid w-full gap-y-2.5 sm:w-fit"
               />
             </div>
           </div>
