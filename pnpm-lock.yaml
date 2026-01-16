@@ -34,8 +34,8 @@ catalogs:
       specifier: 5.9.2
       version: 5.9.2
     zod:
-      specifier: ^4.1.13
-      version: 4.1.13
+      specifier: ^4.3.5
+      version: 4.3.5
 
 overrides:
   '@octokit/endpoint@>=9.0.5 <9.0.6': '>=11.0.2'
@@ -230,7 +230,7 @@ importers:
         version: 2.3.8(react@19.2.3)
       zod:
         specifier: 'catalog:'
-        version: 4.1.13
+        version: 4.3.5
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -252,10 +252,10 @@ importers:
     dependencies:
       '@t3-oss/env-nextjs':
         specifier: ^0.13.10
-        version: 0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.1.13)
+        version: 0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.3.5)
       zod:
         specifier: 'catalog:'
-        version: 4.1.13
+        version: 4.3.5
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -318,7 +318,7 @@ importers:
         version: 1.4.0
       zod:
         specifier: 'catalog:'
-        version: 4.1.13
+        version: 4.3.5
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4.1.17
@@ -7146,9 +7146,6 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.1.13:
-    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
-
   zod@4.3.5:
     resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
 
@@ -9954,7 +9951,7 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  '@sanity/insert-menu@3.0.3(@emotion/is-prop-valid@1.4.0)(@sanity/types@5.4.0(@types/react@19.2.7)(debug@4.4.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(styled-components@6.3.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3))':
+  '@sanity/insert-menu@3.0.3(@emotion/is-prop-valid@1.4.0)(@sanity/types@5.4.0(@types/react@19.2.7))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(styled-components@6.3.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3))':
     dependencies:
       '@sanity/icons': 3.7.4(react@19.2.3)
       '@sanity/types': 5.4.0(@types/react@19.2.7)(debug@4.4.3)
@@ -10364,7 +10361,7 @@ snapshots:
     dependencies:
       '@sanity/comlink': 4.0.1
       '@sanity/icons': 3.7.4(react@19.2.3)
-      '@sanity/insert-menu': 3.0.3(@emotion/is-prop-valid@1.4.0)(@sanity/types@5.4.0(@types/react@19.2.7)(debug@4.4.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(styled-components@6.3.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+      '@sanity/insert-menu': 3.0.3(@emotion/is-prop-valid@1.4.0)(@sanity/types@5.4.0(@types/react@19.2.7))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(styled-components@6.3.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       '@sanity/mutate': 0.11.0-canary.4(xstate@5.25.1)
       '@sanity/presentation-comlink': 2.0.1(@sanity/client@7.13.1)(@sanity/types@5.4.0(@types/react@19.2.7))
       '@sanity/preview-url-secret': 4.0.2(@sanity/client@7.13.1)
@@ -10428,19 +10425,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.1.13)':
+  '@t3-oss/env-core@0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.3.5)':
     optionalDependencies:
       typescript: 5.9.2
       valibot: 1.2.0(typescript@5.9.2)
-      zod: 4.1.13
+      zod: 4.3.5
 
-  '@t3-oss/env-nextjs@0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.1.13)':
+  '@t3-oss/env-nextjs@0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.3.5)':
     dependencies:
-      '@t3-oss/env-core': 0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.1.13)
+      '@t3-oss/env-core': 0.13.10(typescript@5.9.2)(valibot@1.2.0(typescript@5.9.2))(zod@4.3.5)
     optionalDependencies:
       typescript: 5.9.2
       valibot: 1.2.0(typescript@5.9.2)
-      zod: 4.1.13
+      zod: 4.3.5
 
   '@tailwindcss/node@4.1.17':
     dependencies:
@@ -13693,7 +13690,7 @@ snapshots:
       '@sanity/id-utils': 1.0.0
       '@sanity/image-url': 2.0.2
       '@sanity/import': 4.0.4(@types/node@24.10.2)(@types/react@19.2.7)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.37.0)(yaml@2.6.1)
-      '@sanity/insert-menu': 3.0.3(@emotion/is-prop-valid@1.4.0)(@sanity/types@5.4.0(@types/react@19.2.7)(debug@4.4.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(styled-components@6.3.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+      '@sanity/insert-menu': 3.0.3(@emotion/is-prop-valid@1.4.0)(@sanity/types@5.4.0(@types/react@19.2.7))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(styled-components@6.3.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       '@sanity/logos': 2.2.2(react@19.2.3)
       '@sanity/media-library-types': 1.2.0
       '@sanity/message-protocol': 0.19.0
@@ -14690,8 +14687,6 @@ snapshots:
       readable-stream: 4.7.0
 
   zod@3.25.76: {}
-
-  zod@4.1.13: {}
 
   zod@4.3.5: {}
 
