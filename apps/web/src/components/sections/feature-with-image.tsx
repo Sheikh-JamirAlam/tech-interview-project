@@ -29,9 +29,9 @@ export function FeatureWithImage({
             </div>
             <div className="mt-8">
               <SanityButtons
-                buttonClassName="w-full sm:w-auto px-6.5 py-1.5 rounded-none text-[#737373] dark:border-[#737373] dark:bg-transparent dark:hover:bg-input/30 text-base"
+                buttonClassName="w-full sm:w-fit mx-auto px-6.5 py-1.5 rounded-none text-[#737373] dark:border-[#737373] dark:bg-transparent dark:hover:bg-input/30 text-base"
                 buttons={buttons}
-                className="mb-8 grid w-full gap-y-2.5 sm:w-fit"
+                className="mb-8 grid w-full gap-y-2.5 sm:w-fit items-center"
               />
             </div>
           </div>
