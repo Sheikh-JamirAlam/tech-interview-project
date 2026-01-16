@@ -5,7 +5,7 @@
 
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
 
 :root {
   --background: oklch(1 0 0);
@@ -128,9 +128,4 @@
 
 img {
   display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: var(--radius-md);
 }

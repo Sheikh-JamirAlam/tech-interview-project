@@ -1,6 +1,7 @@
 import "@workspace/ui/globals.css";
 
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { Suspense } from "react";
@@ -14,14 +15,25 @@ import { Providers } from "@/components/providers";
 import { getNavigationData } from "@/lib/navigation";
 import { SanityLive } from "@/lib/sanity/live";
 
-const fontSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+// const fontSans = Geist({
+//   subsets: ["latin"],
+//   variable: "--font-sans",
+// });
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+// const fontMono = Geist_Mono({
+//   subsets: ["latin"],
+//   variable: "--font-mono",
+// });
+
+const fontSans = localFont({
+  src: [
+    {
+      path: "../fonts/GalaxieCopernicus-Book.woff",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export default async function RootLayout({
@@ -35,7 +47,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
+        className={`${fontSans.variable} font-sans antialiased bg-[#F3F0ED]`}
       >
         <Providers>
           <Navbar navbarData={nav.navbarData} settingsData={nav.settingsData} />

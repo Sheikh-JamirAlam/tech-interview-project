@@ -16,6 +16,7 @@ import { SanityButtons } from "./elements/sanity-buttons";
 import { SanityIcon } from "./elements/sanity-icon";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
+import { NavButtons } from "./nav-buttons";
 
 // Type helpers using utility types
 type NavigationData = {
@@ -335,18 +336,18 @@ export function Navbar({
   }
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-40 w-full bg-background backdrop-blur-sm">
+      <div className="mx-auto px-10">
+        <div className="flex h-27.5 items-center justify-between">
           {/* Logo */}
-          <div className="flex h-[40px] w-40 items-center">
+          <div className="flex h-10 w-27 items-center">
             {logo && (
               <Logo
                 alt={siteTitle || ""}
-                height={40}
+                height={45}
                 image={logo}
                 priority
-                width={120}
+                width={108}
               />
             )}
           </div>
@@ -368,13 +369,15 @@ export function Navbar({
 
           {/* Desktop Actions */}
           <div className="hidden items-center gap-4 md:flex">
-            <ModeToggle />
+            {/* <ModeToggle /> */}
             <SanityButtons
               buttonClassName="rounded-lg"
               buttons={buttons || []}
               className="flex items-center gap-2"
             />
           </div>
+
+          <NavButtons />
 
           {/* Mobile Menu */}
           <MobileMenu navbarData={navbarData} settingsData={settingsData} />

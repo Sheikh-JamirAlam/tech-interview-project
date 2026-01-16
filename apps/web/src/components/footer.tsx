@@ -103,7 +103,7 @@ export function FooterSkeleton() {
             <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 lg:items-start">
               <div>
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
-                  <div className="h-[40px] w-[80px] animate-pulse rounded bg-muted" />
+                  <div className="h-10 w-20 animate-pulse rounded bg-muted" />
                 </span>
                 <div className="mt-6 h-16 w-full animate-pulse rounded bg-muted" />
               </div>
@@ -151,11 +151,29 @@ function Footer({ data, settingsData }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 pb-8">
-      <section className="container mx-auto">
-        <div className="h-[500px] lg:h-auto">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-4 text-center md:px-6 lg:flex-row lg:text-left">
-            <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 md:gap-8 lg:items-start">
+    <footer className="mt-50 pt-8 pb-11 bg-[#E3E3E3]">
+      <section className="max-w-361.5 mx-auto text-[#9C9C9D]">
+        <div className="grid grid-cols-5 gap-x-10 gap-y-9">
+          <div className="font-medium">
+            <p>Tel: +44 (0) 207 730 2122</p><p>95-97 Pimlico Rd</p><p>London SW1W 8PH</p>
+          </div>
+          <div className="font-medium">
+            <a href="mailto:hello@jamb.co.uk">hello@jamb.co.uk</a>
+          </div>
+          <div></div>
+          <div className="col-span-2">
+            <p className="font-medium">Newsletter</p>
+            <div className="mt-3 flex gap-x-0.5">
+              <input placeholder="Search" className="w-100 h-11 px-4 bg-white outline-0" />
+              <button className="w-38 h-11 bg-white">Subscribe</button>
+            </div>
+            <div className="mt-3 flex gap-x-2 items-center">
+              <div className="w-3 h-3 rounded-full border border-[#9C9C9D]"></div>
+              <p className="font-medium">I agree to our Privacy Policy</p>
+            </div>
+          </div>
+          {/* <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-4 text-center md:px-6 lg:flex-row lg:text-left"> */}
+            {/* <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 md:gap-8 lg:items-start">
               <div>
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
                   <Logo alt={siteTitle} image={logo} priority />
@@ -167,17 +185,17 @@ function Footer({ data, settingsData }: FooterProps) {
                 )}
               </div>
               {socialLinks && <SocialLinks data={socialLinks} />}
-            </div>
-            {Array.isArray(columns) && columns?.length > 0 && (
-              <div className="grid grid-cols-3 gap-6 lg:mr-20 lg:gap-28">
-                {columns.map((column, index) => (
-                  <div key={`column-${column?._key}-${index}`}>
-                    <h3 className="mb-6 font-semibold">{column?.title}</h3>
+            </div> */}
+            <div className="w-full h-165 col-span-5 flex flex-col flex-wrap gap-x-10 gap-y-5">
+              {Array.isArray(columns) && columns?.length > 0 && (
+                columns.map((column, index) => (
+                  <div key={`column-${column?._key}-${index}`} className={`w-64 border border-t-[#9C9C9D] ${column?.title === "Reproduction Lighting" ? "h-120" : column?.title === "Journal" ? "h-120" : ""}`}>
+                    <h3 className="mb-4 mt-3.5 font-medium text-black">{column?.title}</h3>
                     {column?.links && column?.links?.length > 0 && (
-                      <ul className="space-y-4 text-muted-foreground text-sm dark:text-zinc-400">
+                      <ul className="space-y-4 text-[#9C9C9D]">
                         {column?.links?.map((link, columnIndex) => (
                           <li
-                            className="font-medium hover:text-primary"
+                            className={`font-medium hover:text-primary ${link.name === "Sell an Antique Chimneypiece" ? "text-primary font-medium" : ""}`}
                             key={`${link?._key}-${columnIndex}-column-${column?._key}`}
                           >
                             <Link
@@ -196,11 +214,11 @@ function Footer({ data, settingsData }: FooterProps) {
                       </ul>
                     )}
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="mt-20 border-t pt-8">
+                ))
+              )}
+            </div>
+          {/* </div> */}
+          {/* <div className="mt-20 border-t pt-8">
             <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-4 text-center font-normal text-muted-foreground text-sm md:px-6 lg:flex-row lg:items-center lg:text-left">
               <p>
                 © {year} {siteTitle}. All rights reserved.
@@ -214,7 +232,7 @@ function Footer({ data, settingsData }: FooterProps) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </footer>

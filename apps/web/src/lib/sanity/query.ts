@@ -181,6 +181,25 @@ const featureCardsIconBlock = /* groq */ `
   }
 `;
 
+const featureImageBlock = /* groq */ `
+  _type == "featureWithImage" => {
+    ...,
+    ${richTextFragment},
+    ${imageFragment},
+    ${buttonsFragment}
+  }
+`;
+
+const productListBlock = /* groq */ `
+  _type == "productList" => {
+    ...,
+    "products": array::compact(products[]{
+      ...,
+      ${imageFragment}
+    })
+  }
+`;
+
 const pageBuilderFragment = /* groq */ `
   pageBuilder[]{
     ...,
@@ -189,6 +208,8 @@ const pageBuilderFragment = /* groq */ `
     ${heroBlock},
     ${faqAccordionBlock},
     ${featureCardsIconBlock},
+    ${featureImageBlock},
+    ${productListBlock},
     ${subscribeNewsletterBlock},
     ${imageLinkCardsBlock}
   }

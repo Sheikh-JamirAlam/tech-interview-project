@@ -10,6 +10,8 @@ import type { PageBuilderBlockTypes } from "@/types";
 import { CTABlock } from "./sections/cta";
 import { FaqAccordion } from "./sections/faq-accordion";
 import { FeatureCardsWithIcon } from "./sections/feature-cards-with-icon";
+import { FeatureWithImage } from "./sections/feature-with-image";
+import { ProductList } from "./sections/product-list";
 import { HeroBlock } from "./sections/hero";
 import { ImageLinkCards } from "./sections/image-link-cards";
 import { SubscribeNewsletter } from "./sections/subscribe-newsletter";
@@ -37,6 +39,8 @@ const BLOCK_COMPONENTS = {
   faqAccordion: FaqAccordion,
   hero: HeroBlock,
   featureCardsIcon: FeatureCardsWithIcon,
+  featureWithImage: FeatureWithImage,
+  productList: ProductList,
   subscribeNewsletter: SubscribeNewsletter,
   imageLinkCards: ImageLinkCards,
   // biome-ignore lint/suspicious/noExplicitAny: <any is used to allow for dynamic component rendering>
@@ -169,7 +173,7 @@ export function PageBuilder({
 
   return (
     <main
-      className="mx-auto my-16 flex max-w-7xl flex-col gap-16"
+      className="mx-auto"
       data-sanity={containerDataAttribute}
     >
       {blocks.map(renderBlock)}
