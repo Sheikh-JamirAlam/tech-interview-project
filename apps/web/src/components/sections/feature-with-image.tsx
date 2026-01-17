@@ -18,9 +18,9 @@ export function FeatureWithImage({
     <section className={`${eyebrow ? "bg-[#DFDAD7] py-32" : "my-6 md:my-32"}`} id="features">
       <div className="container mx-auto">
         <div className="w-full mx-auto grid lg:grid-cols-2 justify-center">
-          <div className="max-w-lg order-2 lg:order-1 col-span-1 flex max-w-125 mx-auto flex-col items-center justify-center">
-            {eyebrow && <p className="font-medium">{eyebrow}</p>}
-            <div className="mt-6 flex flex-col items-center space-y-4 text-center sm:space-y-6 md:text-center">
+          <div className="max-w-125 order-2 lg:order-1 col-span-1 flex mx-auto flex-col items-center justify-center">
+            {eyebrow && <p className="mt-12 lg:mt-0 font-medium">{eyebrow}</p>}
+            <div className={`${eyebrow ? "mt-6" : "mt-12 lg:mt-0"} flex flex-col items-center space-y-4 text-center sm:space-y-6 md:text-center`}>
               <h2 className="mx-auto max-w-86 font-medium text-3xl">{title}</h2>
               <RichText
                 className="text-left text-base"
