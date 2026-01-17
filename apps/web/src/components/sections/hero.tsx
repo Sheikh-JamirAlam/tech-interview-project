@@ -15,8 +15,8 @@ export function HeroBlock({
   richText,
 }: HeroBlockProps) {
   return (
-    <section className="px-9.5" id="hero">
-      <div className="">
+    <section className="" id="hero">
+      <div className="container mx-auto">
         <div className="">
           {/* <div className="grid h-full grid-rows-[auto_1fr_auto] items-center justify-items-center gap-4 text-center lg:items-start lg:justify-items-start lg:text-left">
             <Badge variant="secondary">{badge}</Badge>
@@ -39,18 +39,26 @@ export function HeroBlock({
           {image && (
             <div className="w-full">
               <SanityImage
-                className="w-full object-cover"
+                className="mx-auto object-cover object-center"
                 fetchPriority="high"
-                height={800}
+                height={1500}
                 image={image}
                 loading="eager"
-                width={800}
+                width={2500}
+                quality={100}
               />
             </div>
           )}
-          <h1 className="w-fit mx-auto mt-7.5 text-[#9C9C9D] text-base text-center">
-            {title}
-          </h1>
+          <div className="w-fit flex flex-wrap justify-center mx-auto mt-7.5 text-base">
+            {title?.split("|").map((text, index) => 
+              <div key={index} className="flex items-center group">
+                <h1 className="w-fit px-2 text-[#9C9C9D] hover:text-black transition-colors">
+                  {text}
+                </h1>
+                <p className="text-[#9C9C9D] group-last:hidden">|</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -26,6 +26,7 @@ type ProcessedImageData = {
 
 export type SanityImageProps = {
   readonly image: SanityImageData;
+  quality?: number;
 } & Omit<WrapperProps<"img">, "id">;
 
 // Base URL construction

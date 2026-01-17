@@ -3205,20 +3205,65 @@
           "of": {
             "type": "object",
             "attributes": {
-              "title": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                },
-                "optional": true
-              },
-              "links": {
+              "sections": {
                 "type": "objectAttribute",
                 "value": {
                   "type": "array",
                   "of": {
                     "type": "object",
                     "attributes": {
+                      "title": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
+                        },
+                        "optional": true
+                      },
+                      "links": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "array",
+                          "of": {
+                            "type": "object",
+                            "attributes": {
+                              "name": {
+                                "type": "objectAttribute",
+                                "value": {
+                                  "type": "string"
+                                },
+                                "optional": true
+                              },
+                              "url": {
+                                "type": "objectAttribute",
+                                "value": {
+                                  "type": "inline",
+                                  "name": "customUrl"
+                                },
+                                "optional": true
+                              },
+                              "_type": {
+                                "type": "objectAttribute",
+                                "value": {
+                                  "type": "string",
+                                  "value": "footerColumnLink"
+                                }
+                              }
+                            },
+                            "rest": {
+                              "type": "object",
+                              "attributes": {
+                                "_key": {
+                                  "type": "objectAttribute",
+                                  "value": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "optional": true
+                      },
                       "name": {
                         "type": "objectAttribute",
                         "value": {
@@ -3238,7 +3283,7 @@
                         "type": "objectAttribute",
                         "value": {
                           "type": "string",
-                          "value": "footerColumnLink"
+                          "value": "footerColumnSection"
                         }
                       }
                     },

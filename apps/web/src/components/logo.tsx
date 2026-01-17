@@ -46,6 +46,7 @@ export function Logo({
           priority={priority}
           src={src ?? LOGO_URL}
           width={width}
+          quality={100}
         />
       )}
     </Link>

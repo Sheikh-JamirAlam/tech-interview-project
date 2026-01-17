@@ -16,12 +16,12 @@ export function FeatureWithImage({
 }: FeatureWithImageProps) {
   return (
     <section className={`${eyebrow ? "bg-[#DFDAD7] py-32" : "my-6 md:my-32"}`} id="features">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="w-full mx-auto flex justify-between">
-          <div className="flex max-w-125 flex-col items-center justify-center">
-            <p className="font-medium">{eyebrow}</p>
+      <div className="container mx-auto">
+        <div className="w-full mx-auto grid lg:grid-cols-2 justify-center">
+          <div className="max-w-lg order-2 lg:order-1 col-span-1 flex max-w-125 mx-auto flex-col items-center justify-center">
+            {eyebrow && <p className="font-medium">{eyebrow}</p>}
             <div className="mt-6 flex flex-col items-center space-y-4 text-center sm:space-y-6 md:text-center">
-              <h2 className="mx-auto max-w-85 font-medium text-3xl">{title}</h2>
+              <h2 className="mx-auto max-w-86 font-medium text-3xl">{title}</h2>
               <RichText
                 className="text-left text-base"
                 richText={richText}
@@ -29,21 +29,21 @@ export function FeatureWithImage({
             </div>
             <div className="mt-8">
               <SanityButtons
-                buttonClassName="w-full sm:w-fit mx-auto px-6.5 py-1.5 rounded-none text-[#737373] dark:border-[#737373] dark:bg-transparent dark:hover:bg-input/30 text-base"
+                buttonClassName="w-fit mx-auto px-6.5 py-1.5 rounded-none text-[#737373] dark:border-[#737373] dark:bg-transparent dark:hover:bg-input/30 text-sm sm:text-base"
                 buttons={buttons}
-                className="mb-8 grid w-full gap-y-2.5 sm:w-fit items-center"
+                className="mb-8 grid gap-y-2.5 sm:w-fit items-center"
               />
             </div>
           </div>
           {image && (
-            <div className="">
+            <div className="order-1 lg:order-2 md:mx-8 lg:mx-15 xl:mx-23.5">
               <SanityImage
-                className="object-cover"
+                className={`${image.alt === "JAMB Image" ? "xl:w-[70%]" : ""} mx-auto lg:mx-0 object-cover object-center`}
                 fetchPriority="high"
-                height={800}
+                height={1500}
                 image={image}
                 loading="eager"
-                width={800}
+                width={1500}
               />
             </div>
           )}

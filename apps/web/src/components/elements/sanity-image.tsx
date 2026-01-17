@@ -14,7 +14,7 @@ import {
 // Image wrapper component
 const ImageWrapper = <T extends ElementType = "img">(
   props: WrapperProps<T>
-) => <BaseSanityImage baseUrl={SANITY_BASE_URL} {...props} />;
+) => <BaseSanityImage baseUrl={SANITY_BASE_URL} quality={100} {...props} />;
 
 // Main component
 function SanityImageUnmemorized({ image, ...props }: SanityImageProps) {

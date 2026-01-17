@@ -436,11 +436,15 @@ export type Footer = {
   label: string;
   subtitle?: string;
   columns?: Array<{
-    title?: string;
-    links?: Array<{
-      name?: string;
-      url?: CustomUrl;
-      _type: "footerColumnLink";
+    sections?: Array<{
+      title?: string;
+      links?: Array<{
+        name?: string;
+        url?: CustomUrl;
+        _type: "footerColumnLink";
+        _key: string;
+      }>;
+      _type: "footerColumnSection";
       _key: string;
     }>;
     _type: "footerColumn";
@@ -2507,12 +2511,15 @@ export type QueryFooterDataResult = {
   subtitle: string | null;
   columns: Array<{
     _key: string;
-    title: string | null;
-    links: Array<{
+    sections: Array<{
       _key: string;
-      name: string | null;
-      openInNewTab: boolean | null;
-      href: string | null;
+      title: string | null;
+      links: Array<{
+        _key: string;
+        name: string | null;
+        openInNewTab: boolean | null;
+        href: string | null;
+      }> | null;
     }> | null;
   }> | null;
 } | null;

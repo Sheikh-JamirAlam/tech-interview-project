@@ -152,26 +152,27 @@ function Footer({ data, settingsData }: FooterProps) {
 
   return (
     <footer className="mt-50 pt-8 pb-11 bg-[#E3E3E3]">
-      <section className="max-w-361.5 mx-auto text-[#9C9C9D]">
-        <div className="grid grid-cols-5 gap-x-10 gap-y-9">
+      <section className="container mx-auto text-[#9C9C9D]">
+        <div className="grid lg:grid-cols-5 gap-x-10 gap-y-9">
           <div className="font-medium">
             <p>Tel: +44 (0) 207 730 2122</p><p>95-97 Pimlico Rd</p><p>London SW1W 8PH</p>
           </div>
           <div className="font-medium">
-            <a href="mailto:hello@jamb.co.uk">hello@jamb.co.uk</a>
+            <a href="mailto:hello@jamb.co.uk" className="hover:text-primary transition-colors">hello@jamb.co.uk</a>
           </div>
           <div></div>
-          <div className="col-span-2">
+          <div className="sm:col-span-2">
             <p className="font-medium">Newsletter</p>
             <div className="mt-3 flex gap-x-0.5">
-              <input placeholder="Search" className="w-100 h-11 px-4 bg-white outline-0" />
-              <button className="w-38 h-11 bg-white">Subscribe</button>
+              <input placeholder="Search" className="w-full sm:w-100 h-11 px-4 bg-white outline-0 border border-white focus:border-neutral-600 transition-colors" />
+              <button className="w-38 h-11 bg-white hover:bg-neutral-600 hover:text-white transition-colors">Subscribe</button>
             </div>
             <div className="mt-3 flex gap-x-2 items-center">
               <div className="w-3 h-3 rounded-full border border-[#9C9C9D]"></div>
               <p className="font-medium">I agree to our Privacy Policy</p>
             </div>
           </div>
+        </div>
           {/* <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-4 text-center md:px-6 lg:flex-row lg:text-left"> */}
             {/* <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 md:gap-8 lg:items-start">
               <div>
@@ -186,37 +187,41 @@ function Footer({ data, settingsData }: FooterProps) {
               </div>
               {socialLinks && <SocialLinks data={socialLinks} />}
             </div> */}
-            <div className="w-full h-165 col-span-5 flex flex-col flex-wrap gap-x-10 gap-y-5">
-              {Array.isArray(columns) && columns?.length > 0 && (
-                columns.map((column, index) => (
-                  <div key={`column-${column?._key}-${index}`} className={`w-64 border border-t-[#9C9C9D] ${column?.title === "Reproduction Lighting" ? "h-120" : column?.title === "Journal" ? "h-120" : ""}`}>
-                    <h3 className="mb-4 mt-3.5 font-medium text-black">{column?.title}</h3>
-                    {column?.links && column?.links?.length > 0 && (
-                      <ul className="space-y-4 text-[#9C9C9D]">
-                        {column?.links?.map((link, columnIndex) => (
-                          <li
-                            className={`font-medium hover:text-primary ${link.name === "Sell an Antique Chimneypiece" ? "text-primary font-medium" : ""}`}
-                            key={`${link?._key}-${columnIndex}-column-${column?._key}`}
-                          >
-                            <Link
-                              href={link.href ?? "#"}
-                              rel={
-                                link.openInNewTab
-                                  ? "noopener noreferrer"
-                                  : undefined
-                              }
-                              target={link.openInNewTab ? "_blank" : undefined}
+          <div className="w-full mt-9 grid lg:grid-cols-5 gap-x-10 gap-y-9">
+            {Array.isArray(columns) && columns?.length > 0 && (
+              columns.map((column, index) => (
+                <div key={`column-${column?._key}-${index}`}>
+                  {column?.sections?.map((section, index) => (
+                    <div key={`section-${section?._key}-${index}`} className={`border border-t-[#9C9C9D] mb-9 last:mb-0`}>
+                      <h3 className="mb-4 mt-3.5 font-medium text-black">{section?.title}</h3>
+                      {section?.links && section?.links?.length > 0 && (
+                        <ul className="space-y-4 text-[#9C9C9D]">
+                          {section?.links?.map((link, columnIndex) => (
+                            <li
+                              className={`font-medium hover:text-primary transition-colors`}
+                              key={`${link?._key}-${columnIndex}-column-${column?._key}`}
                             >
-                              {link.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))
-              )}
-            </div>
+                              <Link
+                                href={link.href ?? "#"}
+                                rel={
+                                  link.openInNewTab
+                                    ? "noopener noreferrer"
+                                    : undefined
+                                }
+                                target={link.openInNewTab ? "_blank" : undefined}
+                              >
+                                {link.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ))
+            )}
+          </div>
           {/* </div> */}
           {/* <div className="mt-20 border-t pt-8">
             <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-4 text-center font-normal text-muted-foreground text-sm md:px-6 lg:flex-row lg:items-center lg:text-left">
@@ -233,7 +238,6 @@ function Footer({ data, settingsData }: FooterProps) {
               </ul>
             </div>
           </div> */}
-        </div>
       </section>
     </footer>
   );

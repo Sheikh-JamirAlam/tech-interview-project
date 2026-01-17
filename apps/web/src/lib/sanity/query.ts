@@ -343,16 +343,19 @@ export const queryFooterData = defineQuery(`
     subtitle,
     columns[]{
       _key,
-      title,
-      links[]{
+      sections[]{
         _key,
-        name,
-        "openInNewTab": url.openInNewTab,
-        "href": select(
-          url.type == "internal" => url.internal->slug.current,
-          url.type == "external" => url.external,
-          url.href
-        ),
+        title,
+        links[]{
+          _key,
+          name,
+          "openInNewTab": url.openInNewTab,
+          "href": select(
+            url.type == "internal" => url.internal->slug.current,
+            url.type == "external" => url.external,
+            url.href
+          ),
+        }
       }
     }
   }

@@ -40,8 +40,8 @@ const footerColumnLink = defineField({
   },
 });
 
-const footerColumn = defineField({
-  name: "footerColumn",
+const footerColumnSection = defineField({
+  name: "footerColumnSection",
   type: "object",
   icon: LayoutPanelLeft,
   fields: [
@@ -68,6 +68,31 @@ const footerColumn = defineField({
       return {
         title: title || "Untitled Column",
         subtitle: `${links.length} link${links.length === 1 ? "" : "s"}`,
+      };
+    },
+  },
+});
+
+const footerColumn = defineField({
+  name: "footerColumn",
+  type: "object",
+  icon: LayoutPanelLeft,
+  fields: [
+    defineField({
+      name: "sections",
+      type: "array",
+      title: "Sections",
+      description: "Sections for the column",
+      of: [footerColumnSection],
+    }),
+  ],
+  preview: {
+    select: {
+      sections: "sections",
+    },
+    prepare({ sections = [] }) {
+      return {
+        title: `${sections.length} link${sections.length === 1 ? "" : "s"}`,
       };
     },
   },

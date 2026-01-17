@@ -336,18 +336,18 @@ export function Navbar({
   }
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-background backdrop-blur-sm">
-      <div className="mx-auto px-10">
+    <header className="sticky top-0 z-40 w-full bg-[#F3F0ED] backdrop-blur-sm">
+      <div className="container mx-auto">
         <div className="flex h-27.5 items-center justify-between">
           {/* Logo */}
           <div className="flex h-10 w-27 items-center">
             {logo && (
               <Logo
                 alt={siteTitle || ""}
-                height={45}
+                height={1000}
                 image={logo}
                 priority
-                width={108}
+                width={1000}
               />
             )}
           </div>
@@ -380,7 +380,7 @@ export function Navbar({
           <NavButtons />
 
           {/* Mobile Menu */}
-          <MobileMenu navbarData={navbarData} settingsData={settingsData} />
+          {/* <MobileMenu navbarData={navbarData} settingsData={settingsData} /> */}
         </div>
       </div>
 

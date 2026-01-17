@@ -28,8 +28,24 @@ import { SanityLive } from "@/lib/sanity/live";
 const fontSans = localFont({
   src: [
     {
-      path: "../fonts/GalaxieCopernicus-Book.woff",
+      path: "../fonts/Copernicus.ttf",
       style: "normal",
+      weight: "400",
+    },
+    {
+      path: "../fonts/Copernicus-Medium.ttf",
+      style: "normal",
+      weight: "500",
+    },
+    {
+      path: "../fonts/Copernicus-Semibold.ttf",
+      style: "normal",
+      weight: "600",
+    },
+    {
+      path: "../fonts/Copernicus-Bold.ttf",
+      style: "normal",
+      weight: "700",
     },
   ],
   variable: "--font-sans",
